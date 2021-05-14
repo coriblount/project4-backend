@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :trips
   resources :appointments
   post '/login', to: "auth#login"
-
+  post '/logout', to: "auth#destroy"
     end
   end
 end
