@@ -3,14 +3,16 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
-    resources :users
+  resources :users
   resources :goals
   resources :finance_items
   resources :list_items
   resources :trips
   resources :appointments
-  post '/login', to: "auth#login"
-  post '/logout', to: "auth#destroy"
+  # post '/login', to: "auth#login"
+  # post '/logout', to: "auth#destroy"
     end
   end
+
+ 
 end

@@ -6,8 +6,9 @@ class Api::V1::ListItemsController < ApplicationController
     end 
     
     def create
-    listitem = ListItem.create(listitems_params)
-    render json: listitem, except: [:created_at, :updated_at]
+
+    listitem = ListItem.create(name: params[:name], user_id: params[:user_id])
+    render json: listitem
     end 
     
     def destroy

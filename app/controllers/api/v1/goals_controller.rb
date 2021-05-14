@@ -6,13 +6,13 @@ class Api::V1::GoalsController < ApplicationController
     end 
     
     def create
-    goal = Goal.create(goal_params)
+    goal = Goal.create(params)
     render json: goal, except: [:created_at, :updated_at]
     end 
     
     def update 
         goal = Goal.find(params[:id])
-        goal.update(goal_params)
+        goal.update(params)
         render json: goal
     end 
     
@@ -23,8 +23,8 @@ class Api::V1::GoalsController < ApplicationController
     
     
     private
-    def goal_params
-        params.require(:goal).permit(:user_id, :name, :start, :completion)
-    end
+    # def goal_params
+    #     params.require(:goal).permit(:user_id, :name, :start, :completion)
+    # end
 
 end
