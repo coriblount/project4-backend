@@ -1,6 +1,6 @@
 class Api::V1::TripsController < ApplicationController
 
-    def index 
+    def index   
         trips = Trip.all
         render json: trips
     end 
@@ -11,7 +11,7 @@ class Api::V1::TripsController < ApplicationController
     end
     
     def create
-    trip = Trip.create(trip_params)
+    trip = Trip.create(name: params[:name], date: params[:date], destination: params[:destination], user_id: params[:user_id])
     render json: trip, except: [:created_at, :updated_at]
     end 
     
@@ -29,8 +29,8 @@ class Api::V1::TripsController < ApplicationController
     
     
     private
-    def trip_params
-        params.require(:trip).permit(:user_id, :name, :date, :destination)
-    end
+    # def trip_params
+    #     params.require(:trip).permit(:user_id, :name, :date, :destination)
+    # end
 
 end

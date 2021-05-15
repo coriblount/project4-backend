@@ -3,7 +3,7 @@ class Api::V1::ListItemsController < ApplicationController
     def index 
         list_items = ListItem.all
         render json: list_items
-    end 
+    end    
     
     def create
 
@@ -16,9 +16,9 @@ class Api::V1::ListItemsController < ApplicationController
         listitem.destroy
     end 
     
-    private
-    def listitems_params
-        params.require(:list_item).permit(:user_id, :name)
-    end
+    # private
+    # def listitems_params
+    #     params.require(:list_item).permit(:user_id, :name)
+    # end
 
 end

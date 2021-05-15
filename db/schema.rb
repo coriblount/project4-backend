@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_222302) do
 
   create_table "finance_items", force: :cascade do |t|
     t.string "name"
-    t.string "amount"
+    t.integer "amount"
     t.string "month"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

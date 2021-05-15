@@ -1,13 +1,13 @@
 class Api::V1::AppointmentsController < ApplicationController
 
-    def index 
+    def index   
         appt = Appointment.all
         render json: appt
     end 
     
     def create
-    appointment = Appointment.create(appointment_params)
-    render json: appointment, except: [:created_at, :updated_at]
+    appointment = Appointment.create(name: params[:name], date: params[:date], time: params[:time], user_id: params[:user_id])
+    render json: appointment
     end 
     
     def update 
@@ -22,9 +22,9 @@ class Api::V1::AppointmentsController < ApplicationController
     end 
     
     
-    private
-    def appointment_params
-        params.require(:appointment).permit(:user_id, :name, :date, :time)
-    end
+    # private
+    # def appointment_params
+    #     params.require(:appointment).permit(:user_id, :name, :date, :time)
+    # end
 
 end
