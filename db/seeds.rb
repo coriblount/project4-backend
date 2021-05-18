@@ -13,8 +13,8 @@ Appointment.destroy_all
 FinanceItem.destroy_all
 Trip.destroy_all
 
-user1 = User.create(name: "Cori", username: "cori", password: "cori")
-user2 = User.create(name: "Adri", username: "adri", password: "adri")
+user2 = User.create(name: "Cori", username: "cori", password: "cori")
+user1 = User.create(name: "Adri", username: "adri", password: "adri")
 user3 = User.create(name: "Udenna", username:"udenna", password: "udenna")
 
 goal1 = Goal.create(name:"Exercise more often", start: 1, completion: 7, user_id: user1.id)
@@ -26,15 +26,13 @@ list_item1 = ListItem.create(name: "meditate", user_id: user1.id)
 list_item2 = ListItem.create(name: "walk dog", user_id: user1.id)
 
 
-appointment1 = Appointment.create(name: "Doctor follow-up", date: "June 10, 2021", time: 1, user_id: user1.id)
-appointment2 = Appointment.create(name: "Veterinarian Appointment", date: "June 1, 2021", time: 3, user_id: user1.id)
-appointment3 = Appointment.create(name: "Tech Meet-Up", date: "May 30, 2021", time: 4, user_id: user1.id)
-appointment4 = Appointment.create(name: "project presentation", date: "May 14, 2021", time: 1, user_id: user1.id)
-appointment5 = Appointment.create(name: "doggie play-date", date: "May 1, 2021", time: 3, user_id: user1.id)
-appointment6 = Appointment.create(name: "hair appointment", date: "June 7, 2021", time: 4, user_id: user1.id)
-appointment7 = Appointment.create(name: "dinner with family", date: "May 15, 2021", time: 1, user_id: user1.id)
-appointment8 = Appointment.create(name: "spin class", date: "May 17, 2021", time: 3, user_id: user1.id)
-appointment9 = Appointment.create(name: "tennis", date: "May 25, 2021", time: 4, user_id: user1.id)
+appointment1 = Appointment.create(name: "Doctor follow-up", date: "Aug 10, 2021", time: "1pm", user_id: user1.id)
+appointment2 = Appointment.create(name: "Veterinarian Appointment", date: "Jun 1, 2021", time: "5pm", user_id: user1.id)
+appointment3 = Appointment.create(name: "Tech Meet-Up", date: "May 30, 2021", time: "2pm", user_id: user1.id)
+appointment4 = Appointment.create(name: "Project Presentation", date: "May 14, 2021", time: "11am", user_id: user1.id)
+appointment6 = Appointment.create(name: "Hair Appointment", date: "Jun 7, 2021", time: "12pm", user_id: user1.id)
+appointment7 = Appointment.create(name: "Dinner at Patricia's", date: "May 15, 2021", time: "7pm", user_id: user1.id)
+appointment9 = Appointment.create(name: "Tennis", date: "May 25, 2021", time: "10am", user_id: user1.id)
 
 finance_items1 = FinanceItem.create(name: "rent", amount: "$700", month: "May", user_id: user1.id)
 finance_items2 = FinanceItem.create(name: "trip" , amount:"$200", month: "June", user_id: user1.id)

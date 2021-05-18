@@ -16,8 +16,8 @@ class Api::V1::TripsController < ApplicationController
     end 
     
     def update 
-        trip = Trip.find(params[:id])
-        trip.update(trip_params)
+        trip = Trip.find(name: params[:name], date: params[:date], destination: params[:destination])
+        trip.update(name: params[:name], date: params[:date], destination: params[:destination])
         render json: trip
     end 
     
