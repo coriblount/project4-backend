@@ -6,7 +6,7 @@ class Api::V1::TripsController < ApplicationController
     end 
 
     def show
-        trip = trip.find(trip_params[:id])
+        trip = Trip.find(params[:id])
         render json: trip, except: [:created_at, :updated_at]
     end
     
@@ -16,7 +16,7 @@ class Api::V1::TripsController < ApplicationController
     end 
     
     def update 
-        trip = Trip.find(name: params[:name], date: params[:date], destination: params[:destination])
+        trip = Trip.find(params[:id])
         trip.update(name: params[:name], date: params[:date], destination: params[:destination])
         render json: trip
     end 
